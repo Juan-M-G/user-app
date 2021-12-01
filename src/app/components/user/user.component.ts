@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import {users} from '../../models/user.model'
 @Component({
   selector: 'app-user',
@@ -12,6 +12,7 @@ export class UserComponent implements OnInit, OnChanges {
     age: 0,
     img: ''
   }
+  @Output() addedFavorite = new EventEmitter<users>();
   ngOnChanges(){
     console.log('constructor','User Name =', this.user.name);
   }
@@ -22,5 +23,7 @@ export class UserComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
   }
-
+  onAddFavorites(){
+    this.addedFavorite.emit(this.user)
+  }
 }
