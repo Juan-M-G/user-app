@@ -13,7 +13,12 @@ export class BoxService {
     return this.favoriteList;
   }
   addToFavoritesService(userS:users){
-    this.favoriteList.push(userS)
+     if(this.favoriteList.indexOf(userS) != -1)
+      {this.favoriteList.splice(this.favoriteList.indexOf(userS) , 1)
+      console.log(this.favoriteList.indexOf(userS))}
+      else
+        this.favoriteList.push(userS)
   }
+
 
 }

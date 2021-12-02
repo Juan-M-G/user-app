@@ -11,7 +11,7 @@ export interface users {
     age: number
   },
   registered: {
-    date: string,
+    date: Date,
     age: number
   },
   picture: {
@@ -19,5 +19,8 @@ export interface users {
     medium: string
     thumbnail: string
   },
-  nat: string
+  nat: string,
+  id: {
+    value: string
+  }
 }

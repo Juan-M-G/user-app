@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
+import { Component, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { users } from '../../models/user.model'
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit, OnChanges {
+export class UserComponent implements OnChanges {
 
   @Input() user: users = {
     gender: '',
@@ -20,7 +20,7 @@ export class UserComponent implements OnInit, OnChanges {
       age: 0
     },
     registered: {
-      date: '',
+      date: new Date(1991,1,1),
       age: 0
     },
     picture: {
@@ -28,8 +28,17 @@ export class UserComponent implements OnInit, OnChanges {
       medium: '',
       thumbnail: ''
     },
-    nat: ''
+    nat: '',
+    id:{
+      value: ''
+    }
   }
+  isFavorite: boolean = false
+
+  favoriteFunc(){
+    this.isFavorite = !this.isFavorite
+  }
+
   @Output() addedFavorite = new EventEmitter<users>();
   ngOnChanges() {
     console.log('constructor', 'User Name =', this.user.name);
@@ -39,9 +48,10 @@ export class UserComponent implements OnInit, OnChanges {
 
   }
 
-  ngOnInit(): void {
-  }
   onAddFavorites() {
     this.addedFavorite.emit(this.user)
   }
+  // isFavoriteState(){
+  //   this.FavoriteState.emit(this.isFavorite)
+  // }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { users } from '../models/user.model';
+import { DataApi } from '../models/data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class UsersService {
   ) { }
   getAllUsers(){
     //return this.http.get<users[]>('https://randomuser.me/api/')
-   return this.http.get<users[]>('https://randomuser.me/api/?results=100&seed=abc&inc=gender,name,nat,email,dob,registered,picture&noinfo')
-    
+   return this.http.get<DataApi>('https://randomuser.me/api/?results=100&inc=gender,name,nat,email,dob,registered,picture,id&noinfo')
+
   }
 }

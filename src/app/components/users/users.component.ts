@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {users} from '../../models/user.model'
+import {DataApi} from '../../models/data.model'
 import {UsersService} from '../../services/users.service'
 import {BoxService} from '../../services/box.service'
 
@@ -16,17 +17,20 @@ export class UsersComponent implements OnInit {
   ) {
     this.favoriteList = this.boxService.getFavoriteList();
   }
+  dataApi: DataApi[] = []
   userS: users[] = [];
 
   ngOnInit(): void {
     this.userService.getAllUsers()
-    .subscribe(results =>{
-      this.userS = results
-      console.log(results)
+    .subscribe(data =>{
+      this.userS = data.results
     })
   }
+
   favoriteList: users [] = [];
+
   addToFavorites(userS:users){
     this.boxService.addToFavoritesService(userS)
+    console.log(this.favoriteList)
   }
 }
