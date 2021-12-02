@@ -1,4 +1,4 @@
-<img [src]="user.img" alt="aqui va un negrito">
-<h2>Nombre: {{user.name}}</h2>
-<h3>Edad: {{user.age}}</h3>
+<img [src]="user.picture.large" alt="aqui va un negrito">
+<h2>Nombre: {{user.name.title}} {{user.name.first}} {{user.name.last}}</h2>
+<h3>Edad: {{user.dob.age}}</h3>
 <button (click)="onAddFavorites()" >Add Favorites</button>

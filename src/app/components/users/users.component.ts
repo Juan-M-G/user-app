@@ -16,15 +16,16 @@ export class UsersComponent implements OnInit {
   ) {
     this.favoriteList = this.boxService.getFavoriteList();
   }
+  userS: users[] = [];
 
   ngOnInit(): void {
     this.userService.getAllUsers()
-    .subscribe(data=>{
-      console.log(data)
+    .subscribe(results =>{
+      this.userS = results
+      console.log(results)
     })
   }
   favoriteList: users [] = [];
-  userS: users []= []
   addToFavorites(userS:users){
     this.boxService.addToFavoritesService(userS)
   }
