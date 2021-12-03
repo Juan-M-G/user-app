@@ -1,5 +1,7 @@
 import { Component, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { users } from '../../models/user.model'
+// import {BehaviorSubject} from 'rxjs'
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -20,7 +22,7 @@ export class UserComponent implements OnChanges {
       age: 0
     },
     registered: {
-      date: new Date(1991,1,1),
+      date: '',
       age: 0
     },
     picture: {
@@ -40,18 +42,22 @@ export class UserComponent implements OnChanges {
   }
 
   @Output() addedFavorite = new EventEmitter<users>();
+  @Output() detailUser = new EventEmitter<users>();
+  // private detailUser = new BehaviorSubject<users>(this.user)
+  // detailUser$ = this.detailUser.asObservable();
   ngOnChanges() {
-    console.log('constructor', 'User Name =', this.user.name);
   }
   constructor() {
-    console.log('constructor', 'User Name =', this.user.name);
 
   }
+  detailView(){
+    // this.detailUser.next(this.user)
+    // console.log('Estoy en user componeent ')
+    console.log(this.user)
+    this.detailUser.emit(this.user)
 
+  }
   onAddFavorites() {
     this.addedFavorite.emit(this.user)
   }
-  // isFavoriteState(){
-  //   this.FavoriteState.emit(this.isFavorite)
-  // }
 }

@@ -1,7 +1,8 @@
-<img [src]="user.picture.large" alt="aqui va un negrito">
+<a [routerLink]="['../userdetail']">
+<img (click)="detailView()"  [src]="user.picture.large" alt="aqui va un negrito">
+</a>
 <h2>Nombre: {{user.name.title}} {{user.name.first}} {{user.name.last}}</h2>
 <h3>Fecha de nacimiento: {{user.dob.date|date: 'M/d/yyyy'}}</h3>
 <h3>Edad: {{user.dob.age}}</h3>
 <p>Es favorito? {{isFavorite}}</p>
-<!-- <button (click)="onAddFavorites()" >Add Favorites</button> -->
-<button (click)="favoriteFunc()" (click)="onAddFavorites()" >Add Favorites</button>
+<div><button (click)="favoriteFunc()" (click)="onAddFavorites()" >Add Favorites</button></div>

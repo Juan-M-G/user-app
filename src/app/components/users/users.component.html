@@ -1,4 +1,5 @@
 <p>Perfiles favoritos {{favoriteList.length}}</p>
 <div class="users--grid">
-  <app-user [user]="i" *ngFor="let i of userS"(addedFavorite)="addToFavorites($event)"></app-user>
+  <app-user [user]="i" *ngFor="let i of userS" (detailUser)="detailUser($event)"   (addedFavorite)="addToFavorites($event)"></app-user>
 </div>
+<button [disabled]="btnDisabled" (click)="onLoadMore()" >Cargar más Perfiles</button>

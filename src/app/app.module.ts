@@ -9,6 +9,10 @@ import { ImgComponent } from './components/img/img.component';
 import { UserComponent } from './components/user/user.component';
 import { UsersComponent } from './components/users/users.component';
 import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { NavComponent } from './components/nav/nav.component';
     ImgComponent,
     UserComponent,
     UsersComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    NotFoundComponent,
+    FavoritesComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

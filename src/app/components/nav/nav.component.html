@@ -6,15 +6,15 @@
     <a href="">
       <img src="./assets/svg/choose.svg" alt="logo">
     </a>
-    <a href="">
+    <a routerLink="favorites">
       <img src="./assets/svg/star.svg" alt="logo">
     </a>
   </div>
   <div class="side-menu" [class.active]="activeMenu">
     <button (click)="activateMenu()">Close</button>
     <ul>
-      <li><a href="">All</a></li>
-      <li><a href="">Favorites</a></li>
+      <li><a routerLinkActive="active" routerLink="home">All</a></li>
+      <li><a routerLinkActive="active" routerLink="favorites">Favorites</a></li>
     </ul>
   </div>
 </div>
@@ -25,14 +25,14 @@
         <img src="./assets/svg/choose.svg" alt="logo">
       </a>
       <ul>
-        <li><a href="">All</a></li>
-        <li><a href="">Favorites</a></li>
+        <li><a routerLinkActive="active" routerLink="home">All</a></li>
+        <li><a routerLinkActive="active" routerLink="favorites">Favorites</a></li>
       </ul>
     </nav>
     <div class="info">
       <div class="account">jcm@jcm</div>
       <div>
-        <a href="">
+        <a routerLink="favorites">
           <img src="./assets/svg/star.svg" alt="logo">
         </a>
       </div>
