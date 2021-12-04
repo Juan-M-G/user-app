@@ -1,1 +1,6 @@
-<app-users [userS]="favoriteList"></app-users>
+<h3>Exportar Favoritos</h3>
+<p>Ingrese nombre para el CSV</p>
+<app-users [isFavorite]="stateFv"  [displayBtn]="displayBtn" [userS]="favoriteList" avatar = "dd" ></app-users>
+<input type="text" value="Data" [(ngModel)]="csvName" >
+<button type="submit" (click)="toExport()" >Descargar</button>
+

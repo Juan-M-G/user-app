@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import {users} from '../../models/user.model'
 import {Location} from '@angular/common'
 import {BoxService} from '../../services/box.service'
+
+
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
@@ -43,12 +45,9 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
     this.boxService.detailUser$.subscribe(userDetail => {
       this.user = userDetail
-      console.log(userDetail)
     });
   }
-
   goToBack(){
     this.location.back();
   }
-
 }

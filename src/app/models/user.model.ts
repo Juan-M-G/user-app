@@ -24,3 +24,13 @@ export interface users {
     value: string
   }
 }
+
+export interface csvData{
+  gender: string,
+  name: string,
+  email: string,
+  age: number,
+  nationality: string,
+  birthDate: string,
+  registerDate: string
+}

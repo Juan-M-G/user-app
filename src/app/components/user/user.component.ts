@@ -1,6 +1,5 @@
 import { Component, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { users } from '../../models/user.model'
-// import {BehaviorSubject} from 'rxjs'
 
 @Component({
   selector: 'app-user',
@@ -35,24 +34,24 @@ export class UserComponent implements OnChanges {
       value: ''
     }
   }
-  isFavorite: boolean = false
-
+   isFavorite: boolean = false
+   @Input() favoriteIcon = "../../../assets/svg/falseFv.svg"
   favoriteFunc(){
     this.isFavorite = !this.isFavorite
+    if(this.isFavorite)
+      this.favoriteIcon = "../../../assets/svg/trueFv.svg"
+    else
+    this.favoriteIcon = "../../../assets/svg/falseFv.svg"
   }
 
   @Output() addedFavorite = new EventEmitter<users>();
   @Output() detailUser = new EventEmitter<users>();
-  // private detailUser = new BehaviorSubject<users>(this.user)
-  // detailUser$ = this.detailUser.asObservable();
   ngOnChanges() {
   }
   constructor() {
 
   }
   detailView(){
-    // this.detailUser.next(this.user)
-    // console.log('Estoy en user componeent ')
     console.log(this.user)
     this.detailUser.emit(this.user)
 

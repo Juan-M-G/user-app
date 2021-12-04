@@ -17,7 +17,8 @@ export class UsersComponent {
   @Input() userS: users[] = [];
   @Output() loadMore = new EventEmitter();
   btnDisabled = false
-
+  @Input() displayBtn:string = "display: inline;"
+  @Input() isFavorite: string = "../../../assets/svg/falseFv.svg"
   onLoadMore(){
     if (this.userS.length === 90)
       this.btnDisabled = true
