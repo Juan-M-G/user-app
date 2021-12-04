@@ -1,0 +1,4 @@
+<p>Perfiles favoritos {{favoriteList.length}}</p>
+<div class="users--grid">
+  <app-user [user]="i" *ngFor="let i of userS"(addedFavorite)="addToFavorites($event)"></app-user>
+</div>

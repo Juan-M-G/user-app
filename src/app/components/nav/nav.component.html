@@ -1,0 +1,41 @@
+<div class="show-mobile">
+  <div>
+    <button (click)="activateMenu()">
+      <img src="./assets/svg/menu.svg" alt="menu">
+    </button>
+    <a href="">
+      <img src="./assets/svg/choose.svg" alt="logo">
+    </a>
+    <a href="">
+      <img src="./assets/svg/star.svg" alt="logo">
+    </a>
+  </div>
+  <div class="side-menu" [class.active]="activeMenu">
+    <button (click)="activateMenu()">Close</button>
+    <ul>
+      <li><a href="">All</a></li>
+      <li><a href="">Favorites</a></li>
+    </ul>
+  </div>
+</div>
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img src="./assets/svg/choose.svg" alt="logo">
+      </a>
+      <ul>
+        <li><a href="">All</a></li>
+        <li><a href="">Favorites</a></li>
+      </ul>
+    </nav>
+    <div class="info">
+      <div class="account">jcm@jcm</div>
+      <div>
+        <a href="">
+          <img src="./assets/svg/star.svg" alt="logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
