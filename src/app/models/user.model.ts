@@ -11,7 +11,7 @@ export interface users {
     age: number
   },
   registered: {
-    date: Date,
+    date: string,
     age: number
   },
   picture: {
@@ -23,4 +23,14 @@ export interface users {
   id: {
     value: string
   }
+}
+
+export interface csvData{
+  gender: string,
+  name: string,
+  email: string,
+  age: number,
+  nationality: string,
+  birthDate: string,
+  registerDate: string
 }

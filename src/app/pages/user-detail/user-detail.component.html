@@ -1,0 +1,18 @@
+<div class="page-user">
+  <button (click)="goToBack()">Back</button>
+  <div class="detail" *ngIf="user">
+    <div class="gallery">
+      <img [src]="user.picture.large" alt="img" />
+    </div>
+    <div class = "text">
+      <h1>{{ user.name.title }} {{ user.name.first }} {{ user.name.last }}</h1>
+      <h2>{{ user.email }}</h2>
+      <h3>Edad: {{ user.dob.age }} años</h3>
+      <h3>Fecha de nacimiento: {{ user.dob.date | date: "M/d/yyyy" }}</h3>
+      <h3>Nacionalidad: {{ user.nat }}</h3>
+      <h3>Genero: {{ user.gender }}</h3>
+      <h3>Fecha de registro: {{ user.registered.date | date: "M/s/yyyy" }}</h3>
+      <h3>Antiguedad: {{ user.registered.age }} años</h3>
+    </div>
+  </div>
+</div>
